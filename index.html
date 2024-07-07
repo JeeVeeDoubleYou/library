@@ -11,8 +11,25 @@
     <div id="libraryPage">
         <h1 class="title">Library</h1>
         <div id="bookList"></div>
-        <a href="newBook.html" class="togglePageBtn margin">New Book</a>
+        <button onclick="showForm()" class="togglePageBtn margin">New Book</button>
     </div>
+
+    <form id="newBookForm" style="display: none">
+        <h1 class="title">Input New Book</h1>
+        <h4 class="info">Info : all fields are required</h4>
+        <label for="title">Title</label>
+        <input type="text" id="title" required>
+        <label for="author">Author</label>
+        <input type="text" id="author" required>
+        <label for="pages">Pages</label>
+        <input type="number" min="0" max="10000" id="pages" required>
+        <label for="read">Read </label>
+        <input type="checkbox" id="read" name="read" value="read">
+        <div class="formButtons">
+        <button onclick="hideForm()" class="togglePageBtn">Cancel</button>
+        <button id="addBookBtn" type="submit">Submit</button>
+        </div>
+    </form>
 <script src="script.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@ html {
 .book {
     background-color: rgb(35, 164, 171);
     color: white;
-    max-width: 50%;
+    width: 50%;
     min-height: 100px;
     padding: 30px;
     border-radius: 10px;
