@@ -11,7 +11,7 @@
     <div id="libraryPage">
         <h1 class="title">Library</h1>
         <div id="bookList"></div>
-        <button onclick="showForm()" class="togglePageBtn margin">New Book</button>
+        <button onclick="myForm.showForm()" class="togglePageBtn margin">New Book</button>
     </div>
 
     <form id="newBookForm" style="display: none">
@@ -26,7 +26,7 @@
         <label for="read">Read </label>
         <input type="checkbox" id="read" name="read" value="read">
         <div class="formButtons">
-        <button onclick="hideForm()" class="togglePageBtn">Cancel</button>
+        <button type="reset" onclick="myForm.hideForm()" class="togglePageBtn">Cancel</button>
         <button id="addBookBtn" type="submit">Submit</button>
         </div>
     </form>
