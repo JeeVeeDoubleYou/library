@@ -7,8 +7,28 @@ class Book{
         this.read = read;
     }
 
+    getReadStatus(){
+        return this.read;
+    }
+
+    displayRead(){
+        if (this.read == 'notStarted'){
+            return 'Not Started';
+        } else if (this.read == 'started'){
+            return 'Started';
+        }else if (this.read == 'finished'){
+            return 'Finished';
+        }
+    }
+
     switchReadStatus(){
-        this.read = !this.read;
+        if (this.read == 'notStarted'){
+            this.read = 'started';
+        } else if (this.read == 'started'){
+            this.read = 'finished';
+        }else if (this.read == 'finished'){
+            this.read = 'notStarted';
+        }
     }
 
     getBookInfo(){
@@ -31,7 +51,7 @@ class Library{
         const title = form.elements['title'].value;
         const author = form.elements['author'].value;
         const pages = form.elements['pages'].value;
-        let read = form.elements['read'].checked;
+        let read = form.elements['read'].value;
         this.books.push(new Book(title, author, pages, read));
     }
 
@@ -50,7 +70,7 @@ class Library{
         bookList.innerHTML = '';
         let bookNumber = 0;
         const readBtns = document.getElementsByClassName('readBtn');
-        this.books.forEach(book => {bookList.innerHTML += `<div class="book"><div class="bookInfo">${book.getBookInfo()}</div><button class="readBtn" onclick="myLibrary.changeReadStatus(this.id)" id="${bookNumber}"></button><button class="deleteBookBtn" onclick="myLibrary.deleteBook(this.id)" id="${bookNumber}">Delete Book</button></div>`; if(book.read){readBtns[bookNumber].innerHTML=`Read`}else{readBtns[bookNumber].innerHTML=`Not Read`};bookNumber++});
+        this.books.forEach(book => {bookList.innerHTML += `<div class="book"><div class="bookInfo">${book.getBookInfo()}</div><button class="readBtn" onclick="myLibrary.changeReadStatus(this.id)" id="${bookNumber}"></button><button class="deleteBookBtn" onclick="myLibrary.deleteBook(this.id)" id="${bookNumber}">Delete Book</button></div>`; readBtns[bookNumber].innerHTML=book.displayRead();bookNumber++});
     }
 }
 

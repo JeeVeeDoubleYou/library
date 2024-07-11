@@ -89,6 +89,11 @@ html {
     justify-self: flex-end;
 }
 
+#newBookForm fieldset {
+    grid-area: 6 / 1 / 7 / 3;
+    margin-left: 80px;
+}
+
 #newBookForm .formButtons {
     grid-area: 7 / 2 / 8 / 3;
     display: grid;

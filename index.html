@@ -23,10 +23,17 @@
         <input type="text" id="author" required>
         <label for="pages">Pages</label>
         <input type="number" min="0" max="10000" id="pages" required>
-        <label for="read">Read </label>
-        <input type="checkbox" id="read" name="read" value="read">
+        <fieldset>
+            <legend>Read Status</legend>
+        <label for="notStarted">Not Started  </label>
+        <input type="radio" id="notStarted" name="read" value="notStarted">
+        <label for="started">Started</label>
+        <input type="radio" id="started" name="read" value="started">
+        <label for="finished">Finished</label>
+        <input type="radio" id="finished" name="read" value="finished">
+        </fieldset>
         <div class="formButtons">
-        <button type="reset" onclick="myForm.hideForm()" class="togglePageBtn">Cancel</button>
+        <button id="cancelBookBtn" type="reset" onclick="myForm.hideForm()" class="togglePageBtn">Cancel</button>
         <button id="addBookBtn" type="submit">Submit</button>
         </div>
     </form>
