@@ -21,11 +21,27 @@ html {
     color: white;
     width: 50%;
     min-height: 100px;
-    padding: 30px;
+    padding: 20px 30px;
     border-radius: 10px;
     border: black 3px solid;
     box-shadow: 5px 5px 5px black;
     align-content: center;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bookInfo{
+    grid-area: 1/1/2/3;
+}
+
+.deleteBookBtn {
+    grid-area: 2/2/3/3;
+    background-color: rgb(49, 100, 103);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 7px;
 }
 
 .togglePageBtn {

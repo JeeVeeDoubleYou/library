@@ -13,7 +13,9 @@ function Book(title, author, pages, read){
 
 function displayBooks(){
     const bookList = document.getElementById('bookList');
-    myLibrary.forEach(book => {bookList.innerHTML += `<div class="book">${book.info()}</div>`});
+    bookList.innerHTML = '';
+    bookNumber = 0;
+    myLibrary.forEach(book => {bookList.innerHTML += `<div class="book"><div class="bookInfo">${book.info()}</div><button class="deleteBookBtn" onclick="deleteBook(this.id)" id="${bookNumber}">Delete Book</button></div>`; bookNumber++});
 }
 
 function showForm(){
@@ -35,8 +37,6 @@ document.getElementById('newBookForm').addEventListener('submit', function(e) {
     e.preventDefault();
     addBookToLibrary(); 
     hideForm();
-    const bookList = document.getElementById('bookList');
-    bookList.innerHTML = '';
     displayBooks();
     form.reset();
 });
@@ -48,6 +48,11 @@ function addBookToLibrary(){
     const pages = form.elements['pages'].value;
     const read = form.elements['read'].checked;
     myLibrary.push(new Book(title, author, pages, read));
+}
+
+function deleteBook(clicked_id){
+    myLibrary.splice(clicked_id, 1);
+    displayBooks();
 }
 
 displayBooks();
