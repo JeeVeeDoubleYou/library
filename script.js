@@ -41,6 +41,11 @@ class Library{
     }
 
     displayBooks(){
+        if (this.books.length === 0){
+            const bookList = document.getElementById('bookList');
+            bookList.innerHTML = `<div>No books in library yet</div>`;
+            return;
+        }
         const bookList = document.getElementById('bookList');
         bookList.innerHTML = '';
         let bookNumber = 0;

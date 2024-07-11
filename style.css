@@ -3,7 +3,8 @@ html {
 }
 
 .margin {
-    margin: 50px;
+    margin: 30px 50px;
+
 }
 #libraryPage {
     display: grid;
